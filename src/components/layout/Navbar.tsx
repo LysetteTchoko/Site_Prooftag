@@ -79,8 +79,9 @@ export const Navbar = () => {
           </div>
           
           <a 
-            href="https://portail.prooftagcatis.com" 
+            href="https://mintctv.cm/" 
             target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "px-6 py-2.5 rounded-lg font-bold text-[12px] uppercase tracking-widest transition-all flex items-center gap-2",
               isScrolled 
@@ -124,7 +125,9 @@ export const Navbar = () => {
               </Link>
             ))}
             <a 
-              href="https://portail.prooftagcatis.com" 
+              href="https://mintctv.cm/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-primary text-white p-5 rounded-xl font-bold text-center flex items-center justify-center gap-3 shadow-lg"
             >
               ACCÉDER AU PORTAIL CLIENT <ExternalLink size={18} />
