@@ -42,7 +42,7 @@ export default function AboutClient() {
       </section>
 
       {/* Mandate Section */}
-      <section className="section-padding bg-soft-gray">
+      <section id="mandat" className="section-padding bg-soft-gray">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
@@ -90,16 +90,20 @@ export default function AboutClient() {
             </div>
             
             <div className="relative">
-              {/* IMAGE RÉELLE À FOURNIR : Photo officielle de signature de convention ou contrôle routier de vignette au Cameroun */}
-              <div className="aspect-square bg-white rounded-[3rem] p-1 shadow-2xl border border-slate-100">
-                  <div className="w-full h-full bg-navy-deep rounded-[2.8rem] flex flex-col items-center justify-center p-12 text-center overflow-hidden relative">
-                     <div className="absolute inset-0 opacity-10">
-                        <ShieldCheck size={400} className="text-white" />
+              <div className="aspect-square bg-white rounded-2xl p-1 shadow-2xl border border-slate-100 overflow-hidden relative group">
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                     <img 
+                       src="/images/controle_technique.png" 
+                       alt="Mandat Officiel MINT"
+                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                     />
+                     <div className="absolute inset-0 bg-navy-deep/80 flex flex-col items-center justify-center p-12 text-center">
+                        <ShieldCheck className="text-accent mb-4" size={48} />
+                        <h4 className="text-white font-display font-black text-xl mb-4 uppercase tracking-wider">MANDAT OFFICIEL MINT</h4>
+                        <p className="text-white/70 text-xs font-light leading-relaxed uppercase tracking-widest">
+                           Partenariat Public-Privé exclusif pour la sécurisation routière et la traçabilité fiscale.
+                        </p>
                      </div>
-                     <h4 className="text-white font-display font-black text-2xl mb-4 relative z-10">MANDAT OFFICIEL MINT</h4>
-                     <p className="text-white/40 text-xs font-light relative z-10 leading-relaxed uppercase tracking-widest">
-                        Partenariat Public-Privé exclusif pour la sécurisation routière et la traçabilité fiscale.
-                     </p>
                   </div>
               </div>
             </div>
@@ -108,12 +112,12 @@ export default function AboutClient() {
       </section>
 
       {/* Partnership Section */}
-      <section className="section-padding">
+      <section id="partenaires" className="section-padding">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="order-2 lg:order-1">
-              <div className="relative p-1 bg-gradient-to-br from-primary/20 to-transparent rounded-[3rem]">
-                 <div className="aspect-video bg-navy-deep rounded-[2.8rem] overflow-hidden flex items-center justify-center relative shadow-2xl">
+              <div className="relative p-1 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl">
+                 <div className="aspect-video bg-navy-deep rounded-2xl overflow-hidden flex items-center justify-center relative shadow-2xl">
                     <Globe2 size={160} className="text-white/5 animate-spin-slow" />
                     <div className="absolute inset-0 flex items-center justify-center">
                        <Award size={64} className="text-accent" />
@@ -153,7 +157,7 @@ export default function AboutClient() {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-soft-gray">
+      <section id="organisation" className="section-padding bg-soft-gray">
         <div className="container-custom">
           <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
             <div>
@@ -166,22 +170,34 @@ export default function AboutClient() {
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { img: "/images/controle_technique.png", title: "Centre Partenaire", desc: "Inspection et bancs de test GIEGLAN" },
+              { img: "/images/vignette_securisee.png", title: "Vignette Sécurisée", desc: "Scellé à Bulles® sur pare-brise" },
+              { img: "/images/logiciel_certidocs.png", title: "Logiciel Certidocs CT", desc: "Suivi informatique et interconnexion" },
+              { img: "/images/terrain_cameroun.png", title: "Contrôle Routier", desc: "Vérification mobile par les autorités" }
+            ].map((item, i) => (
               <motion.div 
                 key={i}
-                whileHover={{ y: -10 }}
-                className="aspect-square bg-white rounded-[2rem] overflow-hidden cursor-pointer relative group border border-slate-100 shadow-sm"
+                whileHover={{ y: -6 }}
+                className="bg-white rounded-2xl overflow-hidden cursor-pointer relative group border border-slate-100 shadow-sm flex flex-col h-full"
               >
-                <div className="absolute inset-0 bg-navy-deep/0 group-hover:bg-navy-deep/80 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center">
-                   <ShieldCheck className="text-white opacity-0 group-hover:opacity-100 transition-opacity mb-4" size={32} />
-                   <p className="text-[10px] text-white opacity-0 group-hover:opacity-100 transition-opacity font-bold uppercase tracking-widest">
-                      {/* IMAGE RÉELLE À FOURNIR : Scènes de terrain, inspection de véhicules, pose de scellés à bulles sur pare-brise */}
-                      Opération de terrain {i}
-                   </p>
+                <div className="aspect-square relative w-full overflow-hidden bg-slate-50">
+                  <img 
+                    src={item.img} 
+                    alt={item.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-navy-deep/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-6 text-center">
+                    <ShieldCheck className="text-accent mb-2" size={28} />
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">{item.title}</span>
+                    <span className="text-[10px] text-white/60 mt-1">{item.desc}</span>
+                  </div>
                 </div>
-                <div className="w-full h-full flex items-center justify-center">
-                   <Info className="text-slate-100 group-hover:opacity-0 transition-opacity" size={48} />
+                <div className="p-5 border-t border-slate-50">
+                  <h4 className="font-bold text-navy-deep text-sm leading-tight mb-1">{item.title}</h4>
+                  <p className="text-slate-400 text-xs font-light">{item.desc}</p>
                 </div>
               </motion.div>
             ))}

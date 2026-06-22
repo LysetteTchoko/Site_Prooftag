@@ -71,8 +71,8 @@ export default function TechClient() {
             </div>
             
             <div className="lg:w-1/2">
-              <div className="relative p-12 bg-soft-gray rounded-[3rem] border border-slate-100 shadow-inner">
-                <div className="aspect-square bg-white rounded-[2rem] shadow-2xl flex items-center justify-center overflow-hidden border border-slate-50 relative group">
+              <div className="relative p-12 bg-soft-gray rounded-3xl border border-slate-100 shadow-inner">
+                <div className="aspect-square bg-white rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden border border-slate-50 relative group">
                    <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                    <div className="relative w-72 h-72">
                       {[...Array(25)].map((_, i) => (
@@ -103,7 +103,7 @@ export default function TechClient() {
                    </div>
                 </div>
                 {/* Float Card */}
-                <div className="absolute -bottom-10 -right-10 bg-navy-deep p-8 rounded-[2rem] shadow-2xl border border-white/10 max-w-[240px]">
+                <div className="absolute -bottom-10 -right-10 bg-navy-deep p-8 rounded-2xl shadow-2xl border border-white/10 max-w-[240px]">
                   <p className="text-[10px] font-bold text-accent uppercase tracking-widest mb-3">Certification</p>
                   <p className="text-white text-sm leading-relaxed font-light mb-4">Empreinte 3D validée par la technologie Prooftag.</p>
                   <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
@@ -154,7 +154,7 @@ export default function TechClient() {
 }
 
 const TechBenefitCard = ({ icon: Icon, title, desc }: any) => (
-  <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-premium transition-all duration-500 group">
+  <div className="bg-white p-12 rounded-2xl border border-slate-100 shadow-sm hover:shadow-premium transition-all duration-500 group">
     <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
       <Icon className="text-primary" size={28} />
     </div>

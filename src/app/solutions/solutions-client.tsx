@@ -42,14 +42,6 @@ export default function SolutionsClient() {
       desc: "Protocole d'acquisition automatique de données. Il collecte les mesures directement depuis les bancs de test certifiés (freinage, ripage, suspension, opacimètre) sans aucune intervention manuelle humaine.",
       features: ["Collecte automatisée sans saisie manuelle", "Protocoles de communication inviolables", "Contrôle métrologique permanent"],
       tag: "Automatisation"
-    },
-    {
-      id: "bi",
-      title: "Business Intelligence MINT",
-      icon: BarChart3,
-      desc: "Plateforme de monitoring en temps réel destinée aux autorités ministérielles pour le suivi analytique du parc automobile, l'audit des centres et la détection d'anomalies de fraude.",
-      features: ["Alertes de fraude algorithmiques", "Tableaux de bord géographiques", "Statistiques consolidées de sécurité routière"],
-      tag: "Gouvernance & Data"
     }
   ];
 
@@ -79,14 +71,14 @@ export default function SolutionsClient() {
       {/* Main Grid */}
       <section className="section-padding">
         <div className="container-custom">
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {solutions.map((sol, index) => (
                 <div 
                   key={index} 
                   id={sol.id}
-                  className="group relative flex flex-col p-12 bg-white border border-slate-100 rounded-[3rem] shadow-sm hover:shadow-premium transition-all duration-700"
+                  className="group relative flex flex-col p-8 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-700"
                 >
-                  <div className="flex justify-between items-start mb-12">
+                  <div className="flex justify-between items-start mb-8">
                     <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
                        <sol.icon className="text-primary" size={32} />
                     </div>
@@ -95,35 +87,33 @@ export default function SolutionsClient() {
                     </span>
                   </div>
                   
-                  <h3 className="text-3xl font-bold text-navy-deep mb-6 group-hover:text-primary transition-colors">{sol.title}</h3>
-                  <p className="text-slate-500 mb-10 leading-relaxed font-light text-sm">{sol.desc}</p>
+                  <h3 className="text-2xl font-bold text-navy-deep mb-4 group-hover:text-primary transition-colors">{sol.title}</h3>
+                  <p className="text-slate-500 mb-8 leading-relaxed font-light text-sm">{sol.desc}</p>
                   
-                  <div className="space-y-4 mb-12">
+                  <div className="space-y-4 mb-8">
                     {sol.features.map((feat, i) => (
                       <div key={i} className="flex items-center gap-3">
                          <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center">
                             <ShieldCheck className="text-primary" size={12} />
                          </div>
-                         <span className="text-sm text-slate-700 font-medium">{feat}</span>
+                         <span className="text-xs text-slate-700 font-medium">{feat}</span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-auto flex flex-col gap-6">
-                    {/* IMAGE RÉELLE À FOURNIR : [Capture d'écran du logiciel ou Photo du support physique correspondant à la solution] */}
-                    <div className="aspect-video bg-soft-gray rounded-2xl border border-dashed border-slate-200 flex flex-col items-center justify-center p-6 text-center group-hover:border-primary/30 transition-colors">
-                       <Info className="text-slate-200 mb-3" size={32} />
-                       <span className="text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-relaxed">
-                         /* IMAGE DE LA SOLUTION : {sol.title.toUpperCase()} À FOURNIR */
-                       </span>
+                  <div className="mt-auto">
+                    <div className="aspect-video relative rounded-2xl overflow-hidden border border-slate-100 shadow-sm bg-soft-gray">
+                      <img 
+                        src={
+                          sol.id === "certidocs" ? "/images/logiciel_certidocs.png" :
+                          sol.id === "vignette" ? "/images/vignette_securisee.png" :
+                          "/images/controle_technique.png"
+                        } 
+                        alt={sol.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-
-                    <Link 
-                      href={`/contact?subject=${sol.id}`}
-                      className="w-full text-center btn-outline group-hover:bg-primary group-hover:!text-white group-hover:!border-primary flex items-center justify-center gap-2 py-4 rounded-xl font-bold tracking-widest text-[12px]"
-                    >
-                       {sol.id === 'vignette' ? 'CONSULTER LES SPÉCIFICATIONS' : 'DEMANDER LA FICHE LOGICIELLE'} <ArrowRight size={16} />
-                    </Link>
                   </div>
                 </div>
               ))}
@@ -131,40 +121,17 @@ export default function SolutionsClient() {
         </div>
       </section>
 
-      {/* Demo Section */}
-      <section className="section-padding bg-soft-gray">
-        <div className="container-custom">
-           <div className="bg-white rounded-[3rem] p-12 md:p-24 border border-slate-100 shadow-xl overflow-hidden relative">
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                 <div>
-                    <h2 className="text-4xl md:text-6xl font-display font-extrabold text-navy-deep mb-8 uppercase tracking-tighter leading-none">Démonstration <br />Logicielle</h2>
-                    <p className="text-slate-500 text-lg mb-12 font-light leading-relaxed">
-                      Planifiez une session live avec nos experts pour découvrir l'interface **Certidocs CT** et le monitoring analytique des données **GIEGLAN**.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-6">
-                       <Link href="/contact?subject=demo" className="btn-primary flex items-center justify-center gap-2">
-                          PRENDRE RENDEZ-VOUS
-                       </Link>
-                       <Link href="/contact?subject=pdf" className="btn-outline flex items-center justify-center gap-2">
-                          VOIR LA PRÉSENTATION
-                       </Link>
-                    </div>
-                 </div>
-                 <div className="relative">
-                    <div className="aspect-[4/3] bg-navy-deep rounded-[2.5rem] shadow-2xl p-1 shadow-primary/20">
-                       <div className="w-full h-full bg-[#0a2540] rounded-[2.4rem] overflow-hidden flex items-center justify-center relative">
-                          <Database className="text-white/5 animate-pulse" size={300} />
-                          <div className="absolute inset-0 flex flex-col items-center justify-center p-12">
-                             <Search className="text-accent mb-6" size={48} />
-                             <p className="text-white font-display font-bold text-xl mb-2">Interface de Monitoring</p>
-                             <p className="text-white/40 text-[10px] font-bold uppercase tracking-[0.2em] italic">
-                               /* CAPTURE D'ÉCRAN DE L'INTERFACE DE MONITORING DU MINISTÈRE À FOURNIR */
-                             </p>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
+      {/* Contact CTA Section */}
+      <section className="section-padding bg-soft-gray text-center">
+        <div className="container-custom max-w-3xl">
+           <h2 className="text-3xl md:text-5xl font-display font-extrabold text-navy-deep mb-6 uppercase tracking-tighter">Une Question sur nos Solutions ?</h2>
+           <p className="text-slate-500 text-lg mb-10 font-light leading-relaxed">
+              Nos conseillers techniques sont à votre disposition pour vous accompagner dans le déploiement ou l'authentification de vos dispositifs.
+           </p>
+           <div className="flex justify-center">
+              <Link href="/contact" className="btn-primary">
+                 CONTACTER PROOFTAG-CATIS SA <ArrowRight size={18} />
+              </Link>
            </div>
         </div>
       </section>

@@ -26,7 +26,6 @@ function ContactFormSection() {
     "Solutions de sécurisation (Certidocs CT)",
     "Solutions de sécurisation (Vignette & PV)",
     "Support technique GIEGLAN",
-    "Business Intelligence MINT",
     "Demande de partenariat",
     "Autre demande"
   ];
@@ -48,8 +47,6 @@ function ContactFormSection() {
       setFormData(prev => ({ ...prev, subject: "Solutions de sécurisation (Vignette & PV)" }));
     } else if (subjectParam === "gieglan") {
       setFormData(prev => ({ ...prev, subject: "Support technique GIEGLAN" }));
-    } else if (subjectParam === "bi" || subjectParam === "demo") {
-      setFormData(prev => ({ ...prev, subject: "Business Intelligence MINT" }));
     }
   }, [subjectParam]);
 
@@ -116,7 +113,7 @@ function ContactFormSection() {
             </div>
          </div>
 
-         <div className="p-10 bg-soft-gray rounded-[2.5rem] border border-slate-100 relative overflow-hidden group">
+         <div className="p-10 bg-soft-gray rounded-2xl border border-slate-100 relative overflow-hidden group">
             <div className="relative z-10">
               <div className="flex items-center gap-3 text-primary mb-6">
                  <MessageSquare size={24} />
@@ -139,7 +136,7 @@ function ContactFormSection() {
 
       {/* Contact Form */}
       <div className="lg:col-span-2">
-        <div className="bg-white p-8 md:p-16 rounded-[3rem] shadow-premium border border-slate-100">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-premium border border-slate-100">
           <form onSubmit={handleSubmit} className="space-y-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-4">
@@ -254,7 +251,7 @@ export function ContactClient() {
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="text-accent font-bold text-[10px] uppercase tracking-[0.4em] mb-6 block">Support & Partenariat</span>
-            <h1 className="text-5xl md:text-8xl font-display font-extrabold mb-8 tracking-tighter leading-none uppercase">
+            <h1 className="text-5xl md:text-8xl font-display font-extrabold text-white mb-8 tracking-tighter leading-none uppercase">
               Contactez<span className="text-white/40 italic">-nous</span>
             </h1>
             <p className="max-w-2xl text-white/60 text-lg md:text-xl font-light leading-relaxed">
@@ -280,8 +277,8 @@ export function ContactClient() {
       {/* Google Maps Embed Section */}
       <section className="pb-24">
         <div className="container-custom">
-          <div className="bg-soft-gray p-4 rounded-[3.5rem] border border-slate-100 shadow-inner">
-             <div className="aspect-[21/9] w-full rounded-[3rem] overflow-hidden shadow-2xl relative">
+          <div className="bg-soft-gray p-4 rounded-3xl border border-slate-100 shadow-inner">
+             <div className="aspect-[21/9] w-full rounded-2xl overflow-hidden shadow-2xl relative">
                 <iframe
                   src="https://maps.google.com/maps?q=Residence%20Le%20Carat%20Bonapriso%20Douala&t=&z=16&ie=UTF8&iwloc=&output=embed"
                   width="100%"

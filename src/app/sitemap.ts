@@ -9,7 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/processus",
     "/technologie",
     "/contact",
-    "/reglementation"
+    "/reglementation",
+    "/mentions-legales",
+    "/politique-de-confidentialite"
   ];
 
   return routes.map((route) => ({

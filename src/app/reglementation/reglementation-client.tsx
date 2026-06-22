@@ -4,10 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { 
-  FileText, 
-  Download, 
-  Scale, 
+import {
+  FileText,
+  Download,
+  Scale,
   AlertTriangle,
   Clock,
   CheckCircle,
@@ -18,23 +18,25 @@ import {
 export default function RegulationsClient() {
   const documents = [
     {
-      title: "Décret n°2012/1234/PM",
-      type: "Décret Officiel",
-      desc: "Fixant les modalités de l'organisation et de la sécurisation du contrôle technique automobile au Cameroun.",
-      size: "1.2 MB"
+      title: "Décret n°2012/2627/PM",
+      type: "Décret du Premier Ministre",
+      desc: "Fixant les modalités de sécurisation, d'organisation et de fonctionnement des documents de transport routier au Cameroun.",
+      size: "1.2 MB",
+      fileName: "decret_2012_2627_pm.pdf"
     },
     {
-      title: "Arrêté Ministériel n°0098/MINT",
+      title: "Arrêté n°011/A/MINT",
       type: "Arrêté Ministériel",
-      desc: "Portant sur la tarification, l'automatisation GIEGLAN et les standards des centres de contrôle technique agréés.",
-      size: "850 KB"
+      desc: "Fixant les modalités de l'organisation et du fonctionnement du contrôle technique des véhicules routiers au Cameroun.",
+      size: "850 KB",
+      fileName: "arrete_011_a_mint.pdf"
     }
   ];
 
   return (
     <main id="main-content" className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Page Header */}
       <section className="relative pt-48 pb-24 bg-navy-deep overflow-hidden">
         <div className="absolute inset-0 opacity-20 mesh-background" />
@@ -71,7 +73,7 @@ export default function RegulationsClient() {
               <p className="text-slate-500 text-base leading-relaxed font-light mb-6">
                 Face à des dérives systémiques mettant en danger les citoyens camerounais, le Ministère des Transports a initié une réforme globale visant à assainir le secteur du contrôle technique. Cette réforme réglemente l'interconnexion obligatoire des centres et sécurise la collecte des données fiscales et de conformité.
               </p>
-              
+
               {/* Placeholders commentés pour les statistiques - À confirmer par la direction */}
               <div className="grid grid-cols-2 gap-6 mt-8">
                 <div className="p-6 bg-soft-gray rounded-2xl border border-slate-100">
@@ -96,7 +98,7 @@ export default function RegulationsClient() {
               </div>
             </div>
 
-            <div className="p-12 bg-navy-deep text-white rounded-[3rem] shadow-2xl relative overflow-hidden flex flex-col justify-between">
+            <div className="p-12 bg-navy-deep text-white rounded-3xl shadow-2xl relative overflow-hidden flex flex-col justify-between">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-xl" />
               <AlertTriangle className="text-accent mb-6" size={40} />
               <h4 className="text-2xl font-bold uppercase tracking-tight mb-4">Urgence Sécurité Routière</h4>
@@ -122,7 +124,7 @@ export default function RegulationsClient() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Ce qui change */}
-            <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
+            <div className="bg-white p-12 rounded-2xl border border-slate-100 shadow-sm">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-[#25D366]/10 rounded-full flex items-center justify-center">
                   <CheckCircle className="text-[#25D366]" size={24} />
@@ -148,7 +150,7 @@ export default function RegulationsClient() {
             </div>
 
             {/* Ce qui ne change pas */}
-            <div className="bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm">
+            <div className="bg-white p-12 rounded-2xl border border-slate-100 shadow-sm">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <HelpCircle className="text-primary" size={24} />
@@ -237,15 +239,19 @@ export default function RegulationsClient() {
                   <FileText className="text-white" size={32} />
                 </div>
                 <div className="flex-grow">
-                   <div className="flex items-center gap-2 mb-2">
-                     <span className="px-2 py-0.5 bg-primary/10 text-primary text-[8px] font-bold uppercase rounded-md tracking-wider">{doc.type}</span>
-                     <span className="text-[8px] font-mono text-slate-400 font-bold uppercase">{doc.size}</span>
-                   </div>
-                   <h3 className="text-lg font-bold text-navy-deep mb-2">{doc.title}</h3>
-                   <p className="text-slate-500 text-xs mb-4 leading-relaxed font-light">{doc.desc}</p>
-                   <button className="flex items-center gap-2 text-primary font-bold text-xs hover:gap-3 transition-all uppercase tracking-widest">
-                     <Download size={14} /> Télécharger le PDF
-                   </button>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2 py-0.5 bg-primary/10 text-primary text-[8px] font-bold uppercase rounded-md tracking-wider">{doc.type}</span>
+                    <span className="text-[8px] font-mono text-slate-400 font-bold uppercase">{doc.size}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-navy-deep mb-2">{doc.title}</h3>
+                  <p className="text-slate-500 text-xs mb-4 leading-relaxed font-light">{doc.desc}</p>
+                  <a
+                    href={`/documents/${doc.fileName}`}
+                    download
+                    className="inline-flex items-center gap-2 text-primary font-bold text-xs hover:gap-3 transition-all uppercase tracking-widest"
+                  >
+                    <Download size={14} /> Télécharger le PDF
+                  </a>
                 </div>
               </div>
             ))}

@@ -184,8 +184,8 @@ const Hero = () => {
         >
           <div className="relative aspect-square max-w-lg mx-auto">
              <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse" />
-             <div className="relative glass-morphism rounded-[3rem] p-1 shadow-2xl border border-white/20">
-                <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col justify-between">
+             <div className="relative glass-morphism rounded-3xl p-1 shadow-2xl border border-white/20">
+                <div className="bg-white rounded-2xl p-10 h-full flex flex-col justify-between">
                    <div className="flex justify-between items-start">
                       <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center">
                          <ShieldCheck className="text-primary" size={32} />
@@ -311,7 +311,7 @@ const ProcessCTA = () => (
               DÉCOUVRIR LE PROCESSUS
             </Link>
             <a href="https://mintctv.cm/" target="_blank" rel="noopener noreferrer" className="btn-outline !border-white/20 !text-white hover:!bg-white/5">
-              PORTAIL CLIENT <ExternalLink size={16} />
+              PORTAIL DE VÉRIFICATION <ExternalLink size={16} />
             </a>
           </div>
         </div>
@@ -322,7 +322,7 @@ const ProcessCTA = () => (
              { t: "Preuves Visuelles", d: "Photo et GPS obligatoires par test." },
              { t: "Scellé à Bulles®", d: "Authentification physique inviolable." }
            ].map((item, i) => (
-             <div key={i} className="p-8 bg-white/5 border border-white/10 rounded-[2rem] hover:bg-white/10 transition-colors duration-500">
+             <div key={i} className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors duration-500">
                <h4 className="text-xl font-bold text-white mb-3 tracking-tight">{item.t}</h4>
                <p className="text-sm text-white/40 leading-relaxed font-light">{item.d}</p>
              </div>
@@ -356,7 +356,7 @@ export default function HomeClient() {
            </div>
            
            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <Link href="/solutions#certidocs" className="group relative overflow-hidden rounded-[3rem] bg-soft-gray p-12 hover:shadow-premium transition-all duration-700">
+              <Link href="/solutions#certidocs" className="group relative overflow-hidden rounded-3xl bg-soft-gray p-12 hover:shadow-premium transition-all duration-700">
                  <div className="relative z-10 h-full flex flex-col">
                     <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-10 group-hover:scale-110 transition-transform duration-500">
                        <Activity className="text-primary" size={28} />
@@ -368,7 +368,7 @@ export default function HomeClient() {
                  <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-white opacity-40 rounded-full group-hover:scale-150 transition-transform duration-1000" />
               </Link>
 
-              <Link href="/solutions#vignette" className="group relative overflow-hidden rounded-[3rem] bg-navy-deep p-12 hover:shadow-premium transition-all duration-700">
+              <Link href="/solutions#vignette" className="group relative overflow-hidden rounded-3xl bg-navy-deep p-12 hover:shadow-premium transition-all duration-700">
                  <div className="relative z-10 h-full flex flex-col">
                     <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10 mb-10 group-hover:bg-white group-hover:rotate-12 transition-all duration-500">
                        <ShieldCheck className="text-white group-hover:text-navy-deep transition-colors" size={28} />

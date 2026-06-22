@@ -98,7 +98,7 @@ export default function ProcessClient() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-accent font-bold text-[10px] uppercase tracking-[0.3em] mb-6 block">Standard de Conformité</span>
-            <h1 className="text-5xl md:text-8xl font-display font-extrabold mb-8 tracking-tighter leading-none">
+            <h1 className="text-5xl md:text-8xl font-display font-extrabold text-white mb-8 tracking-tighter leading-none">
               Le Standard des <br /><span className="text-white/40 italic">12 Points</span>
             </h1>
             <p className="max-w-2xl text-white/60 text-lg md:text-xl font-light leading-relaxed">
@@ -119,7 +119,7 @@ export default function ProcessClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="group p-10 bg-soft-gray rounded-[2.5rem] border border-transparent hover:border-primary/20 hover:bg-white hover:shadow-premium transition-all duration-500"
+                className="group p-10 bg-soft-gray rounded-2xl border border-transparent hover:border-primary/20 hover:bg-white hover:shadow-premium transition-all duration-500"
               >
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between mb-8">
@@ -139,18 +139,23 @@ export default function ProcessClient() {
         </div>
       </section>
 
-      {/* Access CTA */}
+      {/* Verification Portal CTA */}
       <section className="section-padding bg-soft-gray">
         <div className="container-custom">
-          <div className="bg-primary rounded-[3rem] p-12 md:p-24 text-white text-center relative overflow-hidden">
+          <div className="bg-primary rounded-3xl p-12 md:p-20 text-white text-center relative overflow-hidden shadow-xl">
              <div className="relative z-10 max-w-3xl mx-auto">
-                <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-8 uppercase tracking-tighter leading-none">Accès Professionnel <br />Portail MINT</h2>
-                <p className="text-white/70 text-lg mb-12 font-light leading-relaxed">
-                  L'infrastructure de suivi et de monitoring est réservée aux centres agréés et aux autorités ministérielles.
+                <h2 className="text-3xl md:text-5xl font-display font-extrabold mb-8 uppercase tracking-tighter leading-none">Vérification en Ligne MINT</h2>
+                <p className="text-white/70 text-base mb-10 font-light leading-relaxed">
+                   Accédez au portail officiel du Ministère des Transports pour vérifier instantanément la validité et l'historique d'une vignette de contrôle technique automobile.
                 </p>
                 <div className="flex justify-center">
-                  <a href="https://mintctv.cm/" target="_blank" rel="noopener noreferrer" className="btn-primary !bg-white !text-primary !rounded-2xl shadow-2xl">
-                    SE CONNECTER AU PORTAIL <ExternalLink size={20} />
+                  <a 
+                    href="https://mintctv.cm/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn-primary !bg-accent !text-primary !border-accent"
+                  >
+                    VÉRIFIER UNE VISITE TECHNIQUE <ExternalLink size={18} />
                   </a>
                 </div>
              </div>
